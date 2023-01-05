@@ -1,0 +1,37 @@
+api: REST API
+
+cmd: Taks
+cmd.audio: Audio
+cmd.audio.task: Extract audio from video
+cmd.pyannote: pyannote.audio
+cmd.pyannote.task: Speaker diarization
+cmd.chunks: Chunks
+cmd.chunks.task: Extract audio chunks
+cmd: Tasks
+cmd.whisper: Whisper
+cmd.whisper.task: Speach recognition - ASR
+cmd.combine: Combine
+cmd.combine.task: Combine ASR with diarization
+cmd.bart: BART Transformer
+cmd.bart.task: Text summarization
+
+topic1: Topic 1
+topic2: Topic 2
+topic3: Topic 3
+topic4: Topic 4
+topic5: Topic 5
+topic6: Topic 6
+
+storage: Storage container
+events: Events
+
+api -> events
+
+events -> topic1 -> cmd.audio
+events -> topic2 -> cmd.pyannote
+events -> topic3 -> cmd.chunks
+events -> topic4 -> cmd.whisper
+events -> topic5 -> cmd.combine
+events -> topic6 -> cmd.bart
+
+api <-> storage <-> cmd
