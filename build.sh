@@ -1,8 +1,8 @@
 #!/bin/bash
 
-docker build -t pytube:1.0-base ./services/pytube/
-# docker build -t speaker_diarization:1.0-base ./services/speaker_diarization/
-# docker build -t audio_chunks:1.0-base ./services/audio_chunks/
-# docker build -t whisper:1.0-base ./services/whisper/
-# docker build -t combine_asr_rttm:1.0-base ./services/combine_asr_rttm/
-# docker build -t summarization:1.0-base ./services/summarization/
+podman build -t sc-pytube:0.0.1 ./services/pytube/
+podman build -t sc-pyannote:0.0.1 ./services/pyannote/
+podman build -t sc-audiochunks:0.0.1 ./services/audio_chunks/
+podman build -t sc-whisper:0.0.1 ./services/whisper/
+podman build -t sc-combine_asr_rttm:0.0.1 ./services/combine_asr_rttm/
+podman build -t sc-summarization:0.0.1 ./services/summarization/

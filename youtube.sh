@@ -5,4 +5,4 @@ set -o errexit
 
 YOUTUBE_URL=$1
 
-docker run --rm -v $PWD/data:/data pytube:1.0-base python /src/script.py --youtube_url $YOUTUBE_URL
+podman run --rm -v $PWD/data:/data sc-pytube:0.0.1 python /src/script.py --youtube_url $YOUTUBE_URL
