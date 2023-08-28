@@ -20,7 +20,7 @@ Steps:
 
 ## Installation and Usage
 
-The uses podman to run the containers. A set of local scripts are provided to run the pipeline.
+The setup uses docker or podman to run the containers. A set of local scripts are provided to run the pipeline.
 
 * build.sh - Builds the containers.
 * pipeline.sh - Runs the pipeline.
