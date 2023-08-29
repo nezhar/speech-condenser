@@ -1,8 +1,10 @@
 #!/bin/bash
+set -o errexit
+
 if [ -z "$SC_RUNTIME" ]
 then
-  SC_RUNTIME="docker"
+    echo "SC_RUNTIME is not set"
+    exit 1
 fi
 
-
-$SC_RUNTIME run --rm -v $PWD/data:/files jrottenberg/ffmpeg -i "/files/input/$2" "/files/tmp/$1/wav/${2/\.mp4/\.wav}"
+$SC_RUNTIME run --rm -v $PWD/data:/data jrottenberg/ffmpeg -i "/$2" "/data/tmp/$1/wav/${3}.wav"

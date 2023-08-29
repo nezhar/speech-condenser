@@ -1,7 +1,14 @@
 #!/bin/bash
+set -o errexit
+
+if [ -f .env ]; then
+  source .env
+fi
+
 if [ -z "$SC_RUNTIME" ]
 then
-  SC_RUNTIME="docker"
+    echo "SC_RUNTIME is not set"
+    exit 1
 fi
 
 $SC_RUNTIME build -t sc-pytube:0.0.1 ./services/pytube/

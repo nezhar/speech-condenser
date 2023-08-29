@@ -1,6 +1,6 @@
-# Speach Condenser
+# Speech Condenser
 
-Speach condenser is a tool for reducing the size of a dialogue.
+Speech condenser is a tool for reducing the size of a dialogue.
 
 ## Pipeline
 

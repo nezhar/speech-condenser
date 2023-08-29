@@ -8,6 +8,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--uuid')
     parser.add_argument('--file_name')
+    parser.add_argument('--output_file_name')
     args = parser.parse_args()
 
     conversation = ""
@@ -34,5 +35,5 @@ if __name__ == '__main__':
         result = summarizer(conversation, truncation=True)
         summary += start_time + " - " + result[0]['summary_text'] + "\n"
 
-    with open('/data/output/{}.txt'.format(args.uuid), 'w') as f:
+    with open('/data/output/{}.txt'.format(args.output_file_name), 'w') as f:
         f.write(summary)

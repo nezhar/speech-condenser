@@ -6,6 +6,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--uuid')
     parser.add_argument('--file_name')
+    parser.add_argument('--output_file_name')
     args = parser.parse_args()
 
     with open('/data/tmp/{}/asr_rttm_combined/{}.txt'.format(args.uuid, args.file_name)) as f:
@@ -14,5 +15,5 @@ if __name__ == '__main__':
         summarizer = pipeline("summarization", model="philschmid/bart-large-cnn-samsum")
         result = summarizer(conversation, truncation=True)
 
-    with open('/data/output/{}.txt'.format(args.uuid), 'w') as f:
+    with open('/data/output/{}.txt'.format(args.output_file_name), 'w') as f:
         f.write(result[0]['summary_text'])
